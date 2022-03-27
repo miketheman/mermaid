@@ -42,6 +42,7 @@ import infoParser from './diagrams/info/parser/info';
 import pieParser from './diagrams/pie/parser/pie';
 import pieDb from './diagrams/pie/pieDb';
 import pieRenderer from './diagrams/pie/pieRenderer';
+import addSVGAccessibilityFields from './diagrams/pie/pieRenderer';
 import requirementParser from './diagrams/requirement/parser/requirementDiagram';
 import requirementDb from './diagrams/requirement/requirementDb';
 import requirementRenderer from './diagrams/requirement/requirementRenderer';
@@ -93,6 +94,7 @@ function parse(text) {
       parser.parser.yy = flowDb;
       break;
     case 'sequence':
+      sequenceDb.clear();
       parser = sequenceParser;
       parser.parser.yy = sequenceDb;
       break;
